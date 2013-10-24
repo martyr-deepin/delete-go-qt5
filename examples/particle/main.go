@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/niemeyer/qml"
+	"github.com/linuxdeepin/go-qt5"
 	"math/rand"
 	"time"
 )

@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/niemeyer/qml"
+	"github.com/linuxdeepin/go-qt5"
 	"image/png"
 	"os"
 )
