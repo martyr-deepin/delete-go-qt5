@@ -1,0 +1,9 @@
+* QQuickWindow
+		setMinimumSize
+		setResizeMode
+		setFormat
+		setColor
+		setFlags
+		
+* QSurfaceFormat		
+		setAlphaBufferSize
