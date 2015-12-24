@@ -13,7 +13,7 @@ import "C"
 
 import (
 	"fmt"
-	"github.com/niemeyer/qml/tref"
+	"gopkg.in/qml.v1/cdata"
 	"reflect"
 	"runtime"
 	"strings"
@@ -27,7 +27,7 @@ var hookWaiting C.int
 // guiLoop runs the main GUI thread event loop in C++ land.
 func guiLoop() {
 	runtime.LockOSThread()
-	guiLoopRef = tref.Ref()
+	guiLoopRef = cdata.Ref()
 	C.newGuiApplication()
 	C.idleTimerInit(&hookWaiting)
 	guiLoopReady.Unlock()
@@ -44,7 +44,7 @@ var (
 
 // gui runs f in the main GUI thread and waits for f to return.
 func gui(f func()) {
-	if tref.Ref() == guiLoopRef {
+	if cdata.Ref() == guiLoopRef {
 		// Already within the GUI thread. Attempting to wait would deadlock.
 		f()
 		return
